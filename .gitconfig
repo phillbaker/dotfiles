@@ -1,8 +1,10 @@
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	# View the current working tree status using the short format
-	s = status -s
+	s = status -sb
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
@@ -25,6 +27,10 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
+	# Show all commits from yesterday (if today is monday, from Friday). Useful for morning scrum.
+	standup = "!sh -c 'git log --since=\"`if [[ Mon == $(date +%a) ]]; then echo last friday; else echo yesterday; fi`\" --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --graph --date=relative'"
+	# new commits have been created by the last command (typically after a "git pull")
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -78,3 +84,6 @@
 
 [push]
 	default = simple
+	
+[help]
+	autocorrect = 1

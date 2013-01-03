@@ -16,7 +16,7 @@ alias h="history"
 alias j="jobs"
 alias v="vim"
 alias m="mate ."
-alias s="subl ."
+alias s="sublime ."
 alias o="open"
 alias oo="open ."
 

@@ -1,5 +1,7 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+# Add RVM to PATH for scripting
+# Add brew bin before rest of path
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
