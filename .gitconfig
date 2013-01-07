@@ -83,7 +83,7 @@
 	insteadOf = "gist:"
 
 [push]
-	default = simple
+	default = current
 	
 [help]
 	autocorrect = 1
