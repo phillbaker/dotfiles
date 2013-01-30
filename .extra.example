@@ -1,0 +1,20 @@
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+# Git credentials
+# Not in the repository, to prevent people from accidentally committing under my name
+GIT_AUTHOR_NAME="Phill Baker"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="phill@generalassemb.ly"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# Set computer name (as done via System Preferences → Sharing)
+# sudo scutil --set ComputerName "phills-air"
+# sudo scutil --set HostName "phills-air"
+# sudo scutil --set LocalHostName "phills-air"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "phills-air"
+
+# Add the ssh key to use for credential forwarding (Needed for capistrano tasks, etc.)
+ssh-add /Users/phill/.ssh/id_rsa >/dev/null 2>&1
