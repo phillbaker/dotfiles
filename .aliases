@@ -131,3 +131,6 @@ done
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+# Remove all ruby gems, from http://geekystuff.net/2009/01/14/remove-all-ruby-gems/
+alias gem-clean='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
