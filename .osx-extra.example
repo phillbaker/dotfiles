@@ -1,0 +1,20 @@
+# Commands personalized to the user to be run after the initial setup
+
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, and `true` with `false`
+defaults write NSGlobalDomain AppleLanguages -array "en"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
+defaults write NSGlobalDomain AppleMetricUnits -bool false
+
+# Set the timezone; see `systemsetup -listtimezones` for other values
+# systemsetup -settimezone "Europe/Brussels" > /dev/null
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "phills-air"
+sudo scutil --set HostName "phills-air"
+sudo scutil --set LocalHostName "phills-air"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "phills-air"
+
+# Xcode
+com.apple.Xcode PBXCustomTemplateMacroDefinitions.ORGANIZATIONNAME -string "Phillip Baker"

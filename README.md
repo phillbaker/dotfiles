@@ -80,6 +80,10 @@ When setting up a new Mac, you may want to install some common Homebrew formulae
 ./.brew
 ```
 
+## See Also
+
+* https://github.com/ptb/Mac-OS-X-Lion-Setup/blob/master/setup.sh
+
 ## Feedback
 
 Suggestions/improvements
