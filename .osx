@@ -87,14 +87,16 @@ defaults write com.apple.helpviewer DevMode -bool true
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# No longer 
-# TODO no longer working
+# Don' show restart/shutdown buttons on login window
+# No longer working
 # defaults write com.apple.loginwindow RestartDisabled -bool
 # defaults write com.apple.loginwindow ShutDownDisabled -bool
 
 #TODO Enable guest account
 # The opposite: http://superuser.com/a/349699
 # https://discussions.apple.com/message/15407118#15407118
+
+#TODO Set user's icon
 
 #TODO display login window as name and passowrd
 
@@ -179,7 +181,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 4
 
-# Save screenshots to the desktop
+# Save screenshots to ~/Downloads
 defaults write com.apple.screencapture location -string "$HOME/Downloads"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -267,6 +269,8 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
+
+#TODO set desktop background
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
@@ -434,6 +438,10 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+###############################################################################
+#TODO set up a dump to /etc/hosts to block ads/etc.
+###############################################################################
 
 ###############################################################################
 # Transmission.app                                                            #
