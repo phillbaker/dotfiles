@@ -314,6 +314,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # the Dock to launch apps.
 defaults write com.apple.dock persistent-apps -array
 
+# Make a shortcut to activate the screensaver from the desktop (then move it to the dock)
+ln -s /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app ~/Desktop/Screensaver
+
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
@@ -442,8 +445,11 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
-#TODO set up a dump to /etc/hosts to block ads/etc.
+# Dump to /etc/hosts to block ads/etc.
 ###############################################################################
+
+sudo mv /etc/hosts /etc/hosts.orig
+sudo curl http://someonewhocares.org/hosts/hosts -o /etc/hosts
 
 ###############################################################################
 # Transmission.app                                                            #
