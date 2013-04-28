@@ -31,6 +31,14 @@
 	standup = "!sh -c 'git log --since=\"`if [[ Mon == $(date +%a) ]]; then echo last friday; else echo yesterday; fi`\" --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --graph --date=relative'"
 	# new commits have been created by the last command (typically after a "git pull")
 	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	# http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+	# `git assume passwords.php`
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	# during merge: `git ours path/to/file.ext`
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 [apply]
 	# Detect whitespace errors when applying a patch
