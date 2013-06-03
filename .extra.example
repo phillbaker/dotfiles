@@ -1,8 +1,5 @@
 # Commands personalized to the user to be run after every login
 
-# Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
 # Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
 GIT_AUTHOR_NAME="Phill Baker"
