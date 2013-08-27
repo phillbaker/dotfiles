@@ -47,7 +47,7 @@ brew install webkit2png
 # Install GUI apps too via `cask`
 brew tap phinze/homebrew-cask
 brew install brew-cask
-brew cask install vlc transmission caffeine the-unarchiver
+brew cask install firefox vlc transmission caffeine the-unarchiver
 
 
 # Remove outdated versions from the cellar
