@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Media Library</title>
+	<trackList>
+		<track>
+			<location>http://hi.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://hobbes.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://aristotle.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://sartre.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>3</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://grelling.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>4</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://dewey.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>5</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://plato.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>6</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://fitch.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>7</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://russell.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>8</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://neville.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>9</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://emerson.idobi.com:80</location>
+			<title>idobi Radio: New. Music. Unfiltered. idobi.com</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>10</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://216.218.147.60:8246</location>
+			<title>Classical KING FM</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>11</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://relay.181.fm:8030/</location>
+			<title>181.fm - The Eagle (Your Home For REAL Classic Rock!)</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>12</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://relay.181.fm:10030/</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>13</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://relay.181.fm:10002/</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>14</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://relay.181.fm:10000/</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>15</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+		<vlc:node title="http://idobi.com/services/iradio.pls">
+			<vlc:item tid="0"/>
+			<vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+			<vlc:item tid="3"/>
+			<vlc:item tid="4"/>
+			<vlc:item tid="5"/>
+			<vlc:item tid="6"/>
+			<vlc:item tid="7"/>
+			<vlc:item tid="8"/>
+			<vlc:item tid="9"/>
+			<vlc:item tid="10"/>
+		</vlc:node>
+			<vlc:item tid="11"/>
+		<vlc:node title="181-eagle.1368291713.pls">
+			<vlc:item tid="12"/>
+			<vlc:item tid="13"/>
+			<vlc:item tid="14"/>
+			<vlc:item tid="15"/>
+		</vlc:node>
+	</extension>
+</playlist>
