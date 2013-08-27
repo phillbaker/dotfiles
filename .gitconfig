@@ -18,7 +18,7 @@
 	# Switch to a branch, creating it if necessary
 	go = checkout -B
 	# Show verbose output about tags, branches or remotes
-	tags = tag -l
+	tags = tag -l -n1
 	branches = branch -a
 	remotes = remote -v
 	# Credit an author on the latest commit
