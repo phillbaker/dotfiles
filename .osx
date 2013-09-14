@@ -348,10 +348,13 @@ find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 ln -s /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
 ln -s /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app /Applications/ScreenSaverEngine.app
 
-# Add a spacer to the left side of the Dock (where the applications are)
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-# Add a spacer to the right side of the Dock (where the Trash is)
-#defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+###############################################################################
+# Xcode                                                                       #
+###############################################################################
+
+# Install Alcatraz: XCode package manager: https://github.com/mneorr/Alcatraz
+mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
+curl -L https://s3.amazonaws.com/xcode-fun-time/alcatraz.tar.gz | tar xv -C ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -
 
 
 ###############################################################################
