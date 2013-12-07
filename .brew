@@ -34,7 +34,7 @@ brew install php54
 
 # Install everything else
 brew install ack
-#brew install exiv2
+brew install bash-completion
 brew install git
 brew install imagemagick
 brew install lynx
@@ -49,7 +49,8 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 brew cask install firefox vlc transmission caffeine the-unarchiver
 
+# Not really brew, but throw it in here for now
+curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
 # Remove outdated versions from the cellar
 brew cleanup
-
