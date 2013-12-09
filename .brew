@@ -17,11 +17,6 @@ brew install bash
 # Install wget with IRI support
 brew install wget --enable-iri
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
-
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
@@ -47,7 +42,7 @@ brew install webkit2png
 # Install GUI apps too via `cask`
 brew tap phinze/homebrew-cask
 brew install brew-cask
-brew cask install firefox vlc transmission caffeine the-unarchiver
+brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text slate
 
 # Not really brew, but throw it in here for now
 curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
