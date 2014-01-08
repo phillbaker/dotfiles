@@ -488,8 +488,8 @@ ln -s ~/.sublime/Packages/Package\ Control/ ~/Library/Application\ Support/Subli
 ###############################################################################
 
 for app in "Dashboard" "Dock" "Finder" \
-	"Safari" "SystemUIServer" "Terminal" "Transmission" \
-	 "iTunes"; do
-	killall "$app" > /dev/null 2>&1
+  "Safari" "SystemUIServer" "Terminal" "Transmission" \
+   "iTunes"; do
+  killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

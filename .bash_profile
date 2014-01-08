@@ -3,8 +3,8 @@ export PATH="$HOME/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+# * ~/.user can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,user}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -39,12 +39,12 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# If possible, add tab completion for many more commands, including git
+# If possible, add tab completion for many more commands, including git sub commands
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# Add
+# Add git branch completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
