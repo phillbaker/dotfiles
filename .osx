@@ -12,6 +12,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # make sure these files exist
 if [ -f "~/Documents/About\ Stacks.lpdf" ]; then rm "~/Documents/About\ Stacks.lpdf"; fi
 if [ -f "~/Downloads/About\ Downloads.lpdf" ]; then rm "~/Downloads/About\ Downloads.lpdf"; fi
+# For mavericks
+if [ -d ~/Downloads/About\ Downloads.lpdf ]; then rm -r ~/Downloads/About\ Downloads.lpdf; fi
 
 ###############################################################################
 # General UI/UX                                                               #
