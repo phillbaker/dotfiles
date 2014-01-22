@@ -2,5 +2,6 @@
 	{ "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
 	{ "keys": ["super+b"], "command": "wrap_lines", "args": {  } },//"columns": 78 "parameters": ["78"]
 	{ "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
-  { "keys": ["super+k"], "command": "find_under_expand" }
+    { "keys": ["super+k"], "command": "find_under_expand" },
+    { "keys": ["super+i"], "command": "find_under_expand_skip" }
 ]
