@@ -39,6 +39,8 @@
 	# during merge: `git ours path/to/file.ext`
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	# Branch clean up
+	sweep = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
 
 [apply]
 	# Detect whitespace errors when applying a patch
