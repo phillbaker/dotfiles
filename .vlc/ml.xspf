@@ -111,6 +111,20 @@
 				<vlc:id>15</vlc:id>
 			</extension>
 		</track>
+		<track>
+			<location>http://icy2.abacast.com:80/king-kingmp3-96</location>
+			<title>KING-FM</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>15</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>http://icy2.abacast.com:80/king-symfavsmp3-48</location>
+			<title>KING-SYMFAVS</title>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>16</vlc:id>
+			</extension>
+		</track>
 	</trackList>
 	<extension application="http://www.videolan.org/vlc/playlist/0">
 		<vlc:node title="http://idobi.com/services/iradio.pls">
@@ -133,5 +147,7 @@
 			<vlc:item tid="14"/>
 			<vlc:item tid="15"/>
 		</vlc:node>
+		<vlc:item tid="15"/>
+      		<vlc:item tid="16"/>
 	</extension>
 </playlist>
