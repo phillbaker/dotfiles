@@ -22,7 +22,6 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install php54
-brew install wrk # http benchmarking: https://github.com/wg/wrk
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
@@ -33,12 +32,15 @@ brew install ack
 brew install bash-completion
 brew install git
 brew install imagemagick
+brew install graphviz # for e.g. for http://voormedia.github.io/rails-erd/install.html
 brew install lynx
 brew install node
 brew install rename
 brew install rhino
 brew install tree
 brew install webkit2png
+brew install wrk # http benchmarking: https://github.com/wg/wrk
+brew install jq # json processor, see https://jqplay.org/
 
 # Install GUI apps too via `cask`
 brew tap phinze/homebrew-cask
