@@ -41,6 +41,7 @@
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	# Branch clean up
 	sweep = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
+	ref = "show-ref --heads master"
 
 [apply]
 	# Detect whitespace errors when applying a patch
