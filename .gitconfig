@@ -42,6 +42,7 @@
 	# Branch clean up
 	sweep = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
 	ref = "show-ref --heads master"
+	amend = "commit --amend --no-edit"
 
 [apply]
 	# Detect whitespace errors when applying a patch
