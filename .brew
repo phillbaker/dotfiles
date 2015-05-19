@@ -28,6 +28,7 @@ brew install php54
 #brew install homebrew/dupes/screen
 
 # Install everything else
+brew install watch # for repeating the same command and `watch`ing progress
 brew install ack
 brew install bash-completion
 brew install git
