@@ -42,7 +42,7 @@ brew install tree
 brew install webkit2png
 brew install wrk # http benchmarking: https://github.com/wg/wrk
 brew install jq # json processor, see https://jqplay.org/
-brew install go # golang for the go programming language
+brew install go --with-cc-all # the go programming language with all the cross-compilers
 
 # Install GUI apps too via `cask`
 brew tap phinze/homebrew-cask
