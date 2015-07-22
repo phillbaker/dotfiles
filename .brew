@@ -39,6 +39,7 @@ brew install node
 brew install rename
 brew install rhino
 brew install tree
+brew install moreutils # for ts and other sweet tools
 brew install webkit2png
 brew install wrk # http benchmarking: https://github.com/wg/wrk
 brew install jq # json processor, see https://jqplay.org/
