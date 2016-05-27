@@ -43,15 +43,6 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-  local port="${1:-4000}"
-  local ip=$(ipconfig getifaddr en1)
-  sleep 1 && open "http://${ip}:${port}/" &
-  php -S "${ip}:${port}"
-}
-
 # Compare original and gzipped file size
 function gz() {
   local origsize=$(wc -c < "$1")
@@ -107,28 +98,82 @@ function unquarantine() {
   done
 }
 
-# Shortcut for `bundle exec rails` and `bundle exec rake`.
-# If bin/rails and bin/rake are available, use them instead as they are much
-# faster to execute than `bundle exec`.
-# http://blog.55minutes.com/2012/01/invoke-rails-and-rake-faster-and-with-fewer-mistakes/
-function rr() {
-  if [[ "g|generate|c|console|s|server|db|dbconsole|new" =~ $1 ]]; then
-    if [ -x bin/rails ]; then
-      bin/rails "$@"
-    elif [ -x script/rails ]; then
-      script/rails "$@"
-    # elif # rails executable is not '/usr/bin/rails' (Mac OS X default rails no-op)
-    #   rails "$@"
-    else
-      bundle exec rails "$@"
+# Based on https://github.com/runeimp/dnsflush
+MAJOR_MINOR_PATCH_RE='([0-9]+)\.([0-9]+)\.([0-9]+)(.*)'
+MAJOR_MINOR_PATCH_BUILD_RE='([0-9]+)\.([0-9]+)\.([0-9]+).?([0-9A-z]+).?$'
+mac_version()
+{
+  local tmp=$(type sw_vers 2>&1 /dev/null)
+  if [[ $? = 0 ]]; then
+    tmp="$(sw_vers -productVersion)"
+    if [[ $tmp =~ $MAJOR_MINOR_PATCH_RE ]]; then
+      local version_major="${BASH_REMATCH[1]}"
+      local version_minor="${BASH_REMATCH[2]}"
     fi
   else
-    if [ -x bin/rake ]; then
-      bin/rake "$@"
-    elif [ -x script/rake ]; then
-      script/rake "$@"
-    else
-      bundle exec rake "$@"
+    tmp=$(system_profiler SPSoftwareDataType | grep 'System Version:' | awk '{print $5 $6}')
+    if [[ "$tmp" =~ $MAJOR_MINOR_PATCH_BUILD_RE ]]; then
+      local version_major="${BASH_REMATCH[1]}"
+      local version_minor="${BASH_REMATCH[2]}"
     fi
   fi
+
+  echo "$version_major.$version_minor"
+}
+
+# Based on https://github.com/runeimp/dnsflush
+# Requires `mac_version` (above).
+UNKNOWN_VERSION_MAC=$(cat <<UNKNOWN_VERSION
+  Don't know how to handle flushing the DNS cache of this version of OS X.
+  This script is specifically setup to handle each version of OS X as Apple
+  changes the mechanism often I do not even want to hazard a guess at how this
+  version manages it's DNS cache.
+UNKNOWN_VERSION
+)
+reset_dns() {
+  local os_name=$(uname -s)
+  if [[ "$os_name" != "Darwin" ]]; then
+    echo "Unknown OS: $os_name"
+    exit 1
+  fi
+
+  local version=$(mac_version)
+  local major_version=`echo $version | cut -d. -f1`
+  local minor_version=`echo $version | cut -d. -f2`
+  if [[ $major_version = 10 ]]; then
+      local dns_flushed=1
+      case $minor_version in
+        9 | 11) # Mavricks & El Capitan
+          dscacheutil -flushcache
+          sudo killall -HUP mDNSResponder
+          dns_flushed=0
+          ;;
+        10) # Yosemite
+          sudo discoveryutil mdnsflushcache
+          sudo discoveryutil udnsflushcaches
+          dns_flushed=0
+          ;;
+        7 | 8) # Lion & Mountain Lion
+          sudo killall -HUP mDNSResponder
+          dns_flushed=0
+          ;;
+        5 | 6) # Leopard & Snow Leopard
+          dscacheutil -flushcache
+          dns_flushed=0
+          ;;
+        1 | 2 | 3 | 4) # Cheetah, Puma, Panther, and Tiger
+          lookupd -flushcache
+          dns_flushed=0
+          ;;
+        *)
+          echo "$UNKNOWN_VERSION_MAC"
+          ;;
+      esac
+
+      if [[ $dns_flushed = 0 ]]; then
+        echo "DNS cache flushed"
+      else
+        echo 'uh oh'
+      fi
+    fi
 }
