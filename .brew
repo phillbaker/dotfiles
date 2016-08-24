@@ -32,6 +32,7 @@ brew install watch # for repeating the same command and `watch`ing progress
 brew install ack
 brew install bash-completion
 brew install git
+brew install git-crypt
 brew install imagemagick
 brew install graphviz # for e.g. for http://voormedia.github.io/rails-erd/install.html
 brew install lynx
