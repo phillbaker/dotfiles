@@ -44,6 +44,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # Add git branch completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
