@@ -19,7 +19,7 @@ brew install wget --enable-iri
 
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
-brew install homebrew/dupes/grep
+brew install homebrew/dupes/grep # ggrep
 brew tap josegonzalez/homebrew-php
 brew install php54
 
@@ -36,16 +36,14 @@ brew install git-crypt
 brew install imagemagick
 brew install graphviz # for e.g. for http://voormedia.github.io/rails-erd/install.html
 brew install lynx
-brew install node
 brew install rename
-brew install rhino
 brew install tree
 brew install moreutils # for ts and other sweet tools
-brew install webkit2png
 brew install wrk # http benchmarking: https://github.com/wg/wrk
 brew install jq # json processor, see https://jqplay.org/
 brew install go --with-cc-all # the go programming language with all the cross-compilers
 brew install pyenv
+brew install nvm
 
 # Install GUI apps too via `cask`
 brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text slate fluid java
