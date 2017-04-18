@@ -125,19 +125,18 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-# Trackpad: swipe between pages TODO with only three fingers
+# Trackpad: swipe between pages with only three fingers
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 2
 
 # Trackpad: mission control via swipe four fingers up: give preference to 3 finger swipe up to go to top of page
 #  see http://superuser.com/a/313165.
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.fourFingerVertSwipeGesture -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerVertSwipeGesture -int 2
 
-# TODO Trackpad: App expose via swipe four finders down
-
-# Trackpad: swipe between full screen apps with four fingers
-defaults write com.apple.systempreferences com.apple.preference.trackpad.3fdrag-4fNavigate -bool YES
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerPinchGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerHorizSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFiveFingerPinchGesture -int 2
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -489,8 +488,7 @@ ln -s ~/.sublime/Packages/Package\ Control/ ~/Library/Application\ Support/Subli
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dashboard" "Dock" "Finder" \
-  "Safari" "SystemUIServer" "Terminal" "Transmission" \
+for app in "Dashboard" "Dock" "Finder" "Safari" "SystemUIServer" "Terminal" "Transmission" \
    "iTunes"; do
   killall "$app" > /dev/null 2>&1
 done
