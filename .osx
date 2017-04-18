@@ -475,14 +475,15 @@ defaults write org.m0k.transmission WarningDonate -bool false
 defaults write org.m0k.transmission WarningLegal -bool false
 
 ###############################################################################
-# Sublime Text 2.app                                                          #
+# Sublime Text 3.app                                                          #
 ###############################################################################
 
-mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-ln -s ~/.sublime/Packages/User/ ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
-ln -s ~/.sublime/Packages/Color\ Scheme\ -\ Default/ ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Default
-ln -s ~/.sublime/Packages/Theme\ -\ Default/ ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Theme\ -\ Default
-ln -s ~/.sublime/Packages/Package\ Control/ ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Package\ Control
+# TODO should make compatible with re-running
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+ln -s ~/.sublime/Packages/User/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+ln -s ~/.sublime/Packages/Color\ Scheme\ -\ Default/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Default
+ln -s ~/.sublime/Packages/Theme\ -\ Default/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Default
+ln -s ~/.sublime/Packages/Package\ Control/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Package\ Control
 
 ###############################################################################
 # Kill affected applications                                                  #
