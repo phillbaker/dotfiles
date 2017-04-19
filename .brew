@@ -46,7 +46,7 @@ brew install pyenv
 brew install nvm
 
 # Install GUI apps too via `cask`
-brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text nativefier java
+brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text nativefier java google-hangouts
 
 # Remove outdated versions from the cellar
 brew cleanup
