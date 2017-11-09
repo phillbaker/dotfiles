@@ -356,6 +356,9 @@ ln -s /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/Scre
 # Xcode                                                                       #
 ###############################################################################
 
+# Stop xcode from indexing (https://stackoverflow.com/a/13959759)
+defaults write com.apple.dt.XCode IDEIndexDisable 1
+
 # Install Alcatraz: XCode package manager: https://github.com/mneorr/Alcatraz
 mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
 curl -L https://s3.amazonaws.com/xcode-fun-time/alcatraz.tar.gz | tar xv -C ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -
