@@ -21,7 +21,7 @@ brew install wget --enable-iri
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep # ggrep
 brew tap josegonzalez/homebrew-php
-brew install php54
+brew install php55
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
