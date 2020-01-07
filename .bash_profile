@@ -9,6 +9,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,user}; do
 done
 unset file
 
+# Ignore MacOS 10.15 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
