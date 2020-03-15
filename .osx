@@ -442,6 +442,9 @@ sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Pro-Clean"
 defaults write com.apple.terminal "Startup Window Settings" -string "Pro-Clean"
 
+# Disable the annoying line marks
+defaults write com.apple.Terminal ShowLineMarks -int 0
+
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
