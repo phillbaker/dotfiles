@@ -39,11 +39,13 @@ brew install imagemagick
 brew install graphviz # for making diagrams
 brew install rename
 brew install tree
+brew install grpcurl # for testing grpc servers
 brew install moreutils # for ts and other sweet tools
 brew install wrk # http benchmarking: https://github.com/wg/wrk
 brew install jq # json processor, see https://jqplay.org/
 brew install golang # the go programming language with all the cross-compilers
 brew install pyenv nvm tfenv rbenv # all the version managers
+brew install ncdu # NCurses Disk Usage
 
 # Install GUI apps too via `cask`
 brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text java 
