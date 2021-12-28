@@ -41,7 +41,7 @@ brew install rename
 brew install tree
 brew install grpcurl # for testing grpc servers
 brew install moreutils # for ts and other sweet tools
-brew install wrk # http benchmarking: https://github.com/wg/wrk
+brew install wrk hyperfine # http and generic benchmarking: https://github.com/wg/wrk and https://github.com/sharkdp/hyperfine
 brew install jq # json processor, see https://jqplay.org/
 brew install golang # the go programming language with all the cross-compilers
 brew install pyenv nvm tfenv rbenv # all the version managers
