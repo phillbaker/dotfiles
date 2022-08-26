@@ -17,17 +17,18 @@ brew install findutils
 brew install bash
 
 # Install wget with IRI support
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install screen
 brew install php
+brew install java
 
 # Install everything else
 brew install watch # for repeating the same command and `watch`ing progress
@@ -48,8 +49,8 @@ brew install pyenv nvm tfenv rbenv # all the version managers
 brew install ncdu # NCurses Disk Usage
 
 # Install GUI apps too via `cask`
-brew cask install firefox vlc transmission caffeine the-unarchiver sublime-text java 
-brew cask install licecap # for gif screencatpures
+brew install --cask firefox vlc transmission caffeine the-unarchiver sublime-text 
+brew install --cask licecap # for gif screencatpures
 
 # Remove outdated versions from the cellar
 brew cleanup
