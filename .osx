@@ -491,7 +491,7 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # Dump to /etc/hosts to block ads/etc.
 ###############################################################################
 
-[if -f /etc/hosts.orig ]; then sudo mv /etc/hosts /etc/hosts.orig; done
+if [ -f /etc/hosts.orig ]; then sudo mv /etc/hosts /etc/hosts.orig; fi
 sudo curl https://someonewhocares.org/hosts/hosts -o /etc/hosts
 
 ###############################################################################
