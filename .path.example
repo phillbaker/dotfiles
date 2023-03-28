@@ -1,6 +1,5 @@
-# Add RVM to PATH for scripting
 # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+source $HOME/.rvm/scripts/rvm
 
 # Add brew bin before rest of path
-export PATH="/usr/local/bin:$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/bin:$PATH"
