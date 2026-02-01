@@ -114,7 +114,8 @@ systemsetup -setrestartfreeze on
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # disable prompting for OS upgrades
-sudo softwareupdate --ignore "macOS Catalina"
+# ref: https://lapcatsoftware.com/articles/2024/2/2.html
+defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date "2050-02-07 23:22:47 +0000"
 # disable prompting for ZSH in catalina
 defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
 
